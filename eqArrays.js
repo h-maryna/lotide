@@ -1,37 +1,25 @@
 const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed:` +  `[actual]` === `[expected]`);
+  if (actual !== expected) {
+    console.log(`Assertion Failed: ${actual} !== ${expected}`);
   } else {
-    console.log(`Assertion Failed: ` + `[actual]` !== '[expected]');
-  }return assertEqual;
+    console.log(`Assertion Passed: ${actual} === ${expected}`);
+  }
 
 };
 assertEqual("Lighthouse Labs", "Bootcamp");
 
 assertEqual(1, 1);
 
-/**const eqArrays = function(arr1, arr2) {
-  for (let i = 0; i < arr1.length; i++){
-    for (let j = 0; j < arr2.length; j++){
-      if(arr1[i] === arr2[j] && arr1.length === arr2.length){
-        return true;
-      }else{
-        return false;
-      }
+const eqArrays = function(arr1, arr2){
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for ( let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
     }
   }
-};**/
-function eqArrays(arr1, arr2) {
-  if (arr1.length === arr2.length) {
-      for (var i = 0; i < arr1.length; i++) {
-          if (arr1[i] !== arr2[i]) {
-              return false;
-          }
-      }
-      return true;
-  } else {
-      return false;
-  }
+  return true;
 }
 
 
