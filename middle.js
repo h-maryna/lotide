@@ -12,7 +12,7 @@ const middle = function(arr){
   if (hasMiddle(arr)){
     let midIndex = Math.floor(arr.length/2) - 1;
     if (isOdd(arr.length)){
-      res = arr[midIndex + 1];
+      res.push(arr[midIndex + 1]);
     }else{
       res.push(arr[midIndex]);
       res.push(arr[midIndex + 1]);
@@ -21,5 +21,7 @@ const middle = function(arr){
   return res;
 };
 
+
 module.exports = eqArrays;
 module.exports = assertArraysEqual;
+module.exports = middle;
